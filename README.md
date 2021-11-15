@@ -1,2 +1,2 @@
 # jsRPS
-TheOdinProject Prokect:  Rock Paper Scissors, JavaScript
+TheOdinProject Project:  Rock Paper Scissors, JavaScript
