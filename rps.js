@@ -3,7 +3,7 @@ function computerPlay() {
     return (computerPick < .34) ? "rock" : (computerPick < .67) ? "paper" : "scissors";
 }
 
-function playerSelection() {
+const playerSelection = function() {
     let playerChoice = prompt(`Choose rock, paper or scissors`);
     playerChoice = playerChoice.toLowerCase();
     if ((playerChoice === "rock")? playerChoice : (playerChoice === "paper")? playerChoice : (playerChoice === "scissors")? playerChoice : false) {
