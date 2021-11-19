@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="rps.js" defer></script>
+    <title>Rock, Paper, Scissors V2</title>
 </head>
+
 <body>
-    <script src="rps.js"></script>
+
+    <div class="container">
+        <div class="playerbtn">
+            <button id="rockbtn">Rock</button>
+        </div>
+        <div class="playerbtn">
+            <button id="paperbtn">Paper</button>
+        </div>
+        <div class="playerbtn">
+            <button id="scissorsbtn">Scissors</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="showplayer1">
+            <h3>Player 1:</h3>
+            <div id="showp"></div>
+        </div>
+        <div id="showplayer2">
+            <h3>Player 2:</h3>
+            <div id="showcomp"></div>
+        </div>
+        <div id="showwinner">
+            <h3>Winner:</h3>
+            <div id="showres"></div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
