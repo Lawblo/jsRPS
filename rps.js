@@ -1,35 +1,50 @@
+//initialises variables
 let playerchoice;
 let computerchoice;
 let gameResult;
 
-//When ran, returns rock, paper, or scissors
+
+
+
+//computerchoice
 function computerPlay() {
     const computerPick = Math.random();
     computerchoice = (computerPick < .34) ? "rock" : (computerPick < .67) ? "paper" : "scissors";
     return computerchoice;
 }
 
+
+
 //returns a string with either "tie", "player wins", or "computer wins"
 function checkWinner(player1, player2) {
-    if (player1 === player2) return "tie";
+    if (player1 === player2) {
+        gameResult = "tie";
+    }
     else if (player1 === "rock") {
-        return (player2 === "paper") ? "computer wins" : "player wins";
+        gameResult = (player2 === "paper") ? "computer wins" : "player wins";
     }
     else if (player1 === "paper") {
-        return (player2 === "scissors") ? "computer wins" : "player wins";
+        gameResult = (player2 === "scissors") ? "computer wins" : "player wins";
     }
     else if (player1 === "scissors") {
-        return (player2 === "rock") ? "computer wins" : "player wins";
+        gameResult = (player2 === "rock") ? "computer wins" : "player wins";
     }
+    return gameResult;
 }
 
+
+
+
 //Runs a round with the player selection, runs the computer function, and the print function
-function game(player) {
+function game(player) { 
     computerPlay();
-    gameResult = checkWinner(player, computerchoice);
+    checkWinner(player, computerchoice);
     printResults();
 }
 
+
+
+//INPUTS:
 //On button presses
 //Set playerchoice -> rock, run a game() with playerchoice
 const rockbtn = document.querySelector('#rockbtn');
@@ -52,19 +67,26 @@ scissorsbtn.addEventListener('click', () => {
     game(playerchoice);
 });
 
+
+
+
+
+
+
+const showp = document.querySelector(`#showp`);
+const showcomp = document.querySelector(`#showcomp`);
+const showres = document.querySelector(`#showres`);
+
 //PRINTS THE PLAYER CHOICE
 const showPlayer = (userchoice) => {
-    const showp = document.querySelector(`#showp`);
     showp.textContent = userchoice;
 }
 //PRINTS THE COMPUTER CHOICE
-const showComputer = (userchoice) => {
-    const showcomp = document.querySelector(`#showcomp`);
+const showComputer = (userchoice) => {  
     showcomp.textContent = userchoice;
 };
 //PRINTS THE RESULTS
 const showResult = (afterGame) => {
-    const showres = document.querySelector(`#showres`);
     showres.textContent = afterGame;
 }
 
